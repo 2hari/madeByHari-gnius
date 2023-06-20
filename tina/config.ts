@@ -5,8 +5,8 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!, // Get this from tina.io
-  token: process.env.TINA_TOKEN!, // Get this from tina.io
+  clientId: null, // Get this from tina.io
+  token: null, // Get this from tina.io
 
   build: {
     outputFolder: "admin",
@@ -43,6 +43,74 @@ export default defineConfig({
           // This is an DEMO router. You can remove this to fit your site
           router: ({ document }) => `/demo/blog/${document._sys.filename}`,
         },
+      },
+      {
+        label: "Global",
+        name: "global",
+        path: "content/global",
+        format: "json",
+        ui: {
+          global: true,
+        },
+        fields: [
+          {
+            type: "object",
+            label: "Header",
+            name: "header",
+            fields: [
+              {
+                type: "object",
+                label: "Nav Links",
+                name: "nav",
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                  defaultItem: {
+                    href: "biography",
+                    label: "BIOGRAPHY",
+                  },
+                },
+                fields: [
+                  {
+                    type: "string",
+                    label: "Link",
+                    name: "href",
+                  },
+                  {
+                    type: "string",
+                    label: "Label",
+                    name: "label",
+                  },
+                  {
+                    type: "object",
+                    label: "Sub Nav Links",
+                    name: "subnav",
+                    list: true,
+                    ui: {
+                      itemProps: (item) => {
+                        return { label: item?.label };
+                      },
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Link",
+                        name: "href",
+                      },
+                      {
+                        type: "string",
+                        label: "Label",
+                        name: "label",
+                      },
+                    ]
+                  }
+                ],
+              },
+            ],
+          },
+        ],
       },
     ],
   },

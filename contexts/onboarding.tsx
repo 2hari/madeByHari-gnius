@@ -8,26 +8,26 @@ import {
 
 const OnboardingContext = createContext({
   onboarding: true,
-  pageTransitionDuration: 4,
-  headingDelay: 4.5,
-  textDelay: 4.6,
+  pageTransitionDuration: 2,
+  headingDelay: 2.5,
+  textDelay: 2.6,
   setOnboarding: () => {},
 })
 
 export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
   const [onboarding, setOnboarding] = useState(true)
 
-  const [pageTransitionDuration, setPageTransitionDuration] = useState(4)
-  const [headingDelay, setHeadingDelay] = useState(4.5)
-  const [textDelay, setTextDelay] = useState(4.6)
+  const [pageTransitionDuration, setPageTransitionDuration] = useState(2)
+  const [headingDelay, setHeadingDelay] = useState(2.5)
+  const [textDelay, setTextDelay] = useState(2.6)
 
   const setOnBoardingFalse = () => setOnboarding(false)
 
   useEffect(() => {
     if (onboarding) {
-      setPageTransitionDuration(4)
-      setHeadingDelay(6)
-      setTextDelay(6.1)
+      setPageTransitionDuration(2)
+      setHeadingDelay(4)
+      setTextDelay(4.1)
     } else {
       setPageTransitionDuration(0)
       setHeadingDelay(0.5)

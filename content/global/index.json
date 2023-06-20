@@ -1,0 +1,30 @@
+{
+  "header": {
+    "nav": [
+      {
+        "href": "nominations",
+        "label": "NOMINATIONS",
+        "subnav": [
+          {
+            "href": "nominations?to=awards",
+            "label": "AWARDS"
+          }
+        ]
+      },
+      {
+        "href": "biography",
+        "label": "BIOGRAPHY",
+        "subnav": [
+          {
+            "href": "biography?to=career",
+            "label": "CAREER"
+          },
+          {
+            "href": "biography?to=archives",
+            "label": "ARCHIVES"
+          }
+        ]
+      }
+    ]
+  }
+}

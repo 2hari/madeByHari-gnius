@@ -4,9 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Christopher Nolan</title>
         <link rel="icon" href="/favicon.ico" />
-
         <meta lang="en-us"></meta>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
