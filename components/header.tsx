@@ -1,10 +1,10 @@
 import { VStack, Box, GridItem, Image } from "@chakra-ui/react"
 import Link from "next/link"
-import { GlobalHeader } from "@/tina/__generated__/types"
+import { GlobalHeader } from "../tina/__generated__/types"
 import { tinaField } from "tinacms/dist/react"
 
-import { Logo, MotionGrid, MotionFlex } from "@/components"
-import { useOnboarding } from "@/contexts/onboarding"
+import { Logo, MotionGrid, MotionFlex } from "../components"
+import { useOnboarding } from "../contexts/onboarding"
 
 const Header = ({ data }: { data: GlobalHeader }) => {
   const { pageTransitionDuration } = useOnboarding()
@@ -19,19 +19,6 @@ const Header = ({ data }: { data: GlobalHeader }) => {
       className="header"
     >
       <Logo />
-      {/* <Box display={{ base: "none", md: "block" }}>
-        <VStack alignItems="left" spacing={2}>
-          <Link href="/nominations">NOMINATIONS</Link>
-          <Link href="/nominations?to=awards">AWARDS</Link>
-        </VStack>
-      </Box>
-      <Box display={{ base: "none", md: "block" }} paddingLeft={8} zIndex={100}>
-        <VStack alignItems="left" spacing={2}>
-          <Link href="/biography">BIOGRAPHY</Link>
-          <Link href="/biography?to=career">CAREER</Link>
-          <Link href="/biography?to=archives">ARCHIVES</Link>
-        </VStack>
-      </Box> */}
       {data.nav &&
         data.nav.map((item, i) => {
           if (!item) {

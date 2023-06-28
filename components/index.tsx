@@ -1,7 +1,7 @@
-import Header from "@/components/header"
-import Logo from "@/components/logo"
-import Heading from "@/components/heading"
-import Footer from "@/components/footer"
+import Header from "../components/header"
+import Logo from "../components/logo"
+import Heading from "../components/heading"
+import Footer from "../components/footer"
 
 import {
   MotionBox,
@@ -9,7 +9,7 @@ import {
   MotionGrid,
   MotionHeading,
   MotionText,
-} from "@/components/motion/index"
+} from "../components/motion/index"
 
 export {
   // Main Comps

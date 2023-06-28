@@ -1,6 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/react"
-import { MotionHeading, MotionText } from "@/components/index"
-import { useOnboarding } from "@/contexts/onboarding"
+import { MotionHeading, MotionText } from "../components/index"
+import { useOnboarding } from "../contexts/onboarding"
 
 interface TopHeadingI {
   mainTitle: { text: string; [key: string]: unknown }
